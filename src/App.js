@@ -5,6 +5,8 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import Persik from './panels/Persik';
+import Museums from './panels/Museums';
+
 
 const App = () => {
 	const [scheme, setScheme] = useState('bright_light')
@@ -40,6 +42,7 @@ const App = () => {
 							<View activePanel={activePanel}>
 								<Home id='home' fetchedUser={fetchedUser} go={go} />
 								<Persik id='persik' go={go} />
+								<Museums id='museums' go={go} />
 							</View>
 						</SplitCol>
 					</SplitLayout>
