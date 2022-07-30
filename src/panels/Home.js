@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import {Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, PanelHeaderBack} from '@vkontakte/vkui';
 
-const Home = ({ id, go, fetchedUser }) => (
+const Home = ({ id, go, fetchedUser, time }) => (
 	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
+		<PanelHeader left={<PanelHeaderBack onClick={go} data-to="main_page"/>}>
+			HOME
+		</PanelHeader>
 		{fetchedUser &&
-		<Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
+		<Group header={<Header mode="secondary">User</Header>}>
 			<Cell
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
 				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
@@ -16,10 +18,16 @@ const Home = ({ id, go, fetchedUser }) => (
 			</Cell>
 		</Group>}
 
-		<Group header={<Header mode="secondary">Navigation Example</Header>}>
+
+		<Group header={<Header mode="secondary"></Header>}>
 			<Div>
-				<Button stretched size="l" mode="secondary" onClick={go} data-to="persik">
-					Show me the Persik, please
+				<Button stretched size="l" mode="secondary" onClick={go} data-to="museums">
+					Museums
+				</Button>
+			</Div>
+			<Div>
+				<Button stretched size="l" mode="secondary" onClick={go} data-to="museums">
+					Theaters
 				</Button>
 			</Div>
 		</Group>
