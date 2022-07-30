@@ -42,6 +42,7 @@ sendRequest('GET', requestURL)
         let key;
         for (key in data['results']) {
             console.log(data['results'][key]['name'])
+            console.log(data['results'][key]['www'])
             names.push(data['results'][key]['name'])
         }
 
@@ -54,7 +55,7 @@ console.log("LOG:", names)
 
 const Museums = props => (
     <Panel id={props.id}>
-        <PanelHeader left={<PanelHeaderBack onClick={props.go} data-to="home"/>}>
+        <PanelHeader left={<PanelHeaderBack onClick={props.go} data-to="main_page"/>}>
             MUSEUMS
         </PanelHeader>
 

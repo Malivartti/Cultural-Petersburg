@@ -9,10 +9,10 @@ import saly from '../img/saly.png';
 const Start = ({ id, run }) => (
     <Panel id={id}>
         <Group>
-            <Panel><img className="Persik" src={icon} alt="Persik The Cat"/>Мой Петербург</Panel>
+            <Panel><img className="Saly" src={icon} alt="Saly"/>Мой Петербург</Panel>
             <Panel>Привет, твой Петербург на связи 😃</Panel>
             <Panel>Это приложение создано для изучения города, открытия новых для себя мест и мониторинга событий</Panel>
-            <img className="Persik" src={saly} alt="Persik The Cat"/>
+            <img className="Saly" src={saly} alt="Saly"/>
             <Button stretched size="l" mode="secondary" onClick={run} data-to="main_page">
                 Начать
             </Button>

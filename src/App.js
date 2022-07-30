@@ -11,9 +11,10 @@ import Start from './panels/Start'
 
 const App = () => {
 	const [scheme, setScheme] = useState('bright_light')
-	const [activePanel, setActivePanel] = useState('home');
+	const [activePanel, setActivePanel] = useState('start');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	let time_text = "Добрый день";
 
 	useEffect(() => {
 		bridge.subscribe(({ detail: { type, data }}) => {
@@ -34,6 +35,15 @@ const App = () => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
 
+	const run = e => {
+		get_text_for_time();
+		setActivePanel(e.currentTarget.dataset.to);
+	};
+
+	function get_text_for_time () {
+
+	};
+
 	return (
 		<ConfigProvider scheme={scheme}>
 			<AdaptivityProvider>
@@ -41,10 +51,11 @@ const App = () => {
 					<SplitLayout popout={popout}>
 						<SplitCol>
 							<View activePanel={activePanel}>
+								<Start id='start' run={run} />
 								<Home id='home' fetchedUser={fetchedUser} go={go} time={time_text} />
 								<MainPage id='main_page' go={go} />
 								<Museums id='museums' go={go} />
-								<Start id='start' run={run} />
+
 							</View>
 						</SplitCol>
 					</SplitLayout>
