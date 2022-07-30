@@ -55,10 +55,8 @@ console.log("LOG:", names)
 const Museums = props => (
     <Panel id={props.id}>
         <PanelHeader left={<PanelHeaderBack onClick={props.go} data-to="home"/>}>
-            Persik
+            MUSEUMS
         </PanelHeader>
-
-        <div>MUSEUMS</div>
 
         <div>
             <ul>{names.map(name => <li key={name}> {name} </li> )}</ul>

@@ -4,7 +4,7 @@ import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, Split
 import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
-import Persik from './panels/Persik';
+import MainPage from './panels/MainPage';
 import Museums from './panels/Museums';
 
 
@@ -41,7 +41,7 @@ const App = () => {
 						<SplitCol>
 							<View activePanel={activePanel}>
 								<Home id='home' fetchedUser={fetchedUser} go={go} />
-								<Persik id='persik' go={go} />
+								<MainPage id='main_page' go={go} />
 								<Museums id='museums' go={go} />
 							</View>
 						</SplitCol>
