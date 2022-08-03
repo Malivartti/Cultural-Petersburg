@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Panel, View } from '@vkontakte/vkui'
+import { Button, Group, Panel, Title, View } from '@vkontakte/vkui'
 import './index.css';
 
 import ICONS from '../../img/icons'
@@ -12,14 +12,16 @@ const Onboarding = ({ id, setActiveView }) => {
 
   return (
     <View id={id} activePanel={id}>
-      <Panel id={id}>
-        <div style={{display: "flex"}}><ICONS.logo fill="red" /> Культурный Петербург</div>
-        <img src={saly} alt="Saly" width="185px"/>
-        <div>Привет, твой Петербург на связи 😃</div>
-        <div>Это приложение создано для изучения города, открытия новых для себя мест и мониторинга событий</div>
-        <Button size="l" mode="secondary" onClick={toMain}>
-          Начать
-        </Button>
+      <Panel id={id} >
+        <Group className="onboarding">
+          <Title className="onboarding__logo" level="2"><ICONS.logo fill="#2787F5"/> Культурный Петербург</Title>
+          <img className="onboarding__saly" src={saly} alt="Saly"/>
+          <Title className="onboarding__greetings">Привет, твой Петербург на связи 😃</Title>
+          <div className="onboarding__descr">Это приложение создано для изучения города, открытия новых для себя мест и мониторинга событий</div>
+          <Button className="onboarding__btn" size="l" onClick={toMain}>
+            Начать <ICONS.arrowRight />
+          </Button>
+        </Group>
       </Panel>
     </View>
   )

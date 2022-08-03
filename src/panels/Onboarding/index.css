@@ -1,0 +1,47 @@
+.onboarding {
+  text-align: center;
+}
+
+.onboarding__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.onboarding__logo div {
+  margin-right: 10px;
+}
+
+.onboarding__saly {
+  margin-bottom: 20px;
+}
+
+.onboarding__greetings {
+  max-width: 300px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 31px;
+  margin: 0 auto 10px;
+}
+
+.onboarding__descr {
+  max-width: 320px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+  color: #6D7885;
+  margin: 0 auto 20px;
+}
+
+.onboarding__btn {
+  background: #4BB34B !important;
+}
+
+.onboarding__btn span {
+  display: flex;
+}
+
+.onboarding__btn span div {
+  margin-left: 5px;
+}

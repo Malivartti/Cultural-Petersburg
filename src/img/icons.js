@@ -4,6 +4,18 @@ import { Icon28CupOutline } from '@vkontakte/icons';
 import { Icon28CrownOutline } from '@vkontakte/icons';
 import { Icon28MarketOutline } from '@vkontakte/icons';
 import { Icon28UserCircleOutline } from '@vkontakte/icons';
+import { Icon28AddCircleOutline } from '@vkontakte/icons';
+import { Icon28CoinsOutline } from '@vkontakte/icons';
+import { Icon28ErrorCircleOutline } from '@vkontakte/icons';
+import { Icon28Notifications } from '@vkontakte/icons';
+import { Icon28Users3Outline } from '@vkontakte/icons';
+import { Icon28MessageOutline } from '@vkontakte/icons';
+import { Icon28Cards2Outline } from '@vkontakte/icons';
+import { Icon28ChevronRightOutline } from '@vkontakte/icons';
+import { Icon28ShareOutline } from '@vkontakte/icons';
+import { Icon28LocationMapOutline } from '@vkontakte/icons';
+import { Icon28ShareExternal } from '@vkontakte/icons';
+import { Icon20ArrowRightOutline } from '@vkontakte/icons';
 
 const ICONS = {
   logo: Icon20GovernmentOutline,
@@ -12,6 +24,18 @@ const ICONS = {
   rating: Icon28CrownOutline,
   store: Icon28MarketOutline,
   account: Icon28UserCircleOutline,
+  add: Icon28AddCircleOutline,
+  coins: Icon28CoinsOutline,
+  error: Icon28ErrorCircleOutline,
+  notification: Icon28Notifications,
+  users: Icon28Users3Outline,
+  message: Icon28MessageOutline,
+  cards: Icon28Cards2Outline,
+  chevronRight: Icon28ChevronRightOutline,
+  share: Icon28ShareOutline,
+  location: Icon28LocationMapOutline,
+  shareExternal: Icon28ShareExternal,
+  arrowRight: Icon20ArrowRightOutline,
 }
 
 export default ICONS;
