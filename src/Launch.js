@@ -3,6 +3,7 @@ import { AdaptivityProvider, ConfigProvider, AppRoot } from '@vkontakte/vkui';
 import bridge from '@vkontakte/vk-bridge';
 
 import App from './App'
+import { User } from './context';
 
 const Launch = () => {
   const [scheme, setScheme] = useState('bright_light')
@@ -26,7 +27,9 @@ const Launch = () => {
     <ConfigProvider scheme={scheme}>
       <AdaptivityProvider>
         <AppRoot>
-          <App />
+          <User.Provider value={fetchedUser}>
+            <App />
+          </User.Provider>
         </AppRoot>
       </AdaptivityProvider>
     </ConfigProvider >

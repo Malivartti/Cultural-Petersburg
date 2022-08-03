@@ -1,0 +1,19 @@
+.weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather__title {
+  margin-bottom: 10px;
+}
+
+.weather__wish {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 114%;
+  color: #6D7885;
+}
+
+.weather__icon {
+  height: 100px;
+}
