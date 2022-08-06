@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useAdaptivity, ViewWidth, Root, SplitLayout, SplitCol } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
+import './global.css'
+
 import Onboarding from './panels/Onboarding/Onboarding';
 import Main from './panels/Main/Main';
 

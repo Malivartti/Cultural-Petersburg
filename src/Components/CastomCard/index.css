@@ -1,0 +1,22 @@
+.card__header {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.card__text {
+  display: flex;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #6D7885;
+}
+
+.card__text div {
+  margin-left: 5px;
+}
