@@ -9,15 +9,19 @@ const TopList = ({ users, currentUser }) => {
       {users.map((user, i) =>
         <Cell
           key={i}
-          before={<div className='user__avatar'><Avatar src={user.photo} /><div className='user__score'>{i + 4}</div></div>}
+          before={
+            <div className='user__avatar'>
+              <Avatar src={user.photo} />
+              <div className='user__score'>
+                {i + 4}
+              </div>
+            </div>}
           description={`${user.score} баллов`}
         >
           {user.first_name} {user.last_name}
         </Cell>
       )}
-      {
-        currentUser && <TopCurrentUser user={currentUser}/>
-      }
+      {currentUser && <TopCurrentUser user={currentUser} />}
     </div>
   )
 }

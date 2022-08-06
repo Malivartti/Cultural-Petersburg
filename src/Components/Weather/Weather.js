@@ -19,7 +19,7 @@ const Weather = () => {
     <Div className='weather'>
       <div>
         <Title className="weather__title" level='2'>Сегодня в Петербурге {weather?.descr}, {weather?.temp}&nbsp;&deg;С</Title>
-        <div className='weather__wish'>Советуем вам выбраться на улицу, погулять со своими друзьями или животными, посетить достопримечательности Петербурга.</div>
+        <div className='subtitle'>Советуем вам выбраться на улицу, погулять со своими друзьями или животными, посетить достопримечательности Петербурга.</div>
       </div>
       <img className="weather__icon" src={weather?.icon} alt='' />
     </Div>
