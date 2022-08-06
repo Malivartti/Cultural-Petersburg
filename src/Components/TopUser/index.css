@@ -1,0 +1,81 @@
+.top-user {
+  position: relative;
+  margin: 0 30px;
+}
+
+.top-user_first .vkuiAvatar {
+  border: 4px solid #FFC107;
+}
+
+.top-user_second .vkuiAvatar {
+  border: 4px solid #B8C1CC;
+}
+
+.top-user_third .vkuiAvatar {
+  border: 4px solid #FF6B00;
+}
+
+.top-user .vkuiAvatar::before {
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 114%;
+  color: #fff;
+  background: red;
+}
+
+.top-user_first .vkuiAvatar::before {
+  content: "1";
+  background: #FFC107;
+}
+
+.top-user_second .vkuiAvatar::before {
+  content: "2";
+  background: #B8C1CC;
+}
+
+.top-user_third .vkuiAvatar::before {
+  content: "3";
+  background: #FF6B00;
+}
+
+.top-user__name {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 114%;
+  text-align: center;
+  color: currentColor;
+  white-space: nowrap; 
+}
+
+.top-user__name_first {
+  color: #FFC107;
+}
+
+.top-user__name_second {
+  color: #B8C1CC;
+}
+
+.top-user__name_third {
+  color: #FF6B00;
+}
+
+.top-user__name + .top-user__name {
+  margin-bottom: 5px;
+}
+
+.top-user__score {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 114%;
+  color: #99A2AD;
+}

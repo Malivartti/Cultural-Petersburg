@@ -1,0 +1,17 @@
+.coins {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #2787F5;
+  border: 1px solid #2787F5;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 2px;
+}
+
+.coins div {
+  margin-right: 3px;
+}
