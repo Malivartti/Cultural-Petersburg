@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { View, Epic, Tabbar, TabbarItem, Panel } from '@vkontakte/vkui'
 import './index.css';
 
@@ -8,9 +8,10 @@ import Rating from "../Rating/Rating";
 import Store from "../Store/Store";
 import Account from "../Account/Account";
 import ICONS from '../../img/icons';
+import { AppNavigation } from '../../context';
 
 const Main = ({ id }) => {
-  const [activeStory, setActiveStory] = useState("home");
+  const {activeStory, setActiveStory} = useContext(AppNavigation)
   const onStoryChange = (e) => setActiveStory(e.currentTarget.dataset.story);
 
   return (
@@ -73,7 +74,7 @@ const Main = ({ id }) => {
           <Challenges id="challenges" />
           <Rating id="rating" />
           <Store id="store" />
-          <Account id="account" />
+          <Account id="account"/>
         </Epic>
       </Panel>
     </View>

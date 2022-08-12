@@ -1,0 +1,34 @@
+.moderation__comparison {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.moderation__comparison-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.moderation__comparison-title {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 114%;
+  padding: 10px 15px;
+  border: 2px solid #000;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.moderation__comparison-title_green {
+  color: #4BB34B;
+  border: 2px solid #4BB34B;
+}
+
+.moderation__comparison-title_red {
+  color: #E64646;
+  border: 2px solid #E64646;
+}
+
+.moderation__btn {
+  margin-top: auto;
+}

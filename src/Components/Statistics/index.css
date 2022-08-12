@@ -1,0 +1,46 @@
+
+.vkuiHorizontalScroll__in {
+  overflow-x: visible;
+}
+
+.statistics__slider {
+  display: flex;
+  align-items: flex-end;
+}
+
+.statistics__cell {
+  max-width: none !important;
+  /* width: 220px; */
+  /* display: flex;
+  justify-content: center; */
+}
+
+.statistics__cell .vkuiHorizontalCell__content {
+  width: 120px;
+}
+
+.statistics__cell .vkuiHorizontalCell__body {
+  width: 100%;
+}
+
+.statistics__cell .vkuiHorizontalCell__subtitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #6D7885;
+  white-space: pre-wrap;
+}
+
+.statistics__item {
+  width: 35px;
+  min-height: 15px;
+  background: #4BB34B;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}

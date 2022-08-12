@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CardScroll, Div, Group, Header } from '@vkontakte/vkui'
 import CastomCard from '../CastomCard/CastomCard';
 import './index.css';
+import { AppNavigation, CardPageData } from '../../context';
 
-// onClick={() => setActivePanel(to)}
-const CastomCardScroll = ({ header, cards, to }) => {
+const CastomCardScroll = ({ header, cards }) => {
+  const setCardData = useContext(CardPageData)
+  const {setActiveView} = useContext(AppNavigation)
+
+  function toCardPage(card) {
+    setCardData({...card, header, toBack: 'main'})
+    setActiveView('cardPage')
+  }
   return (
     <Group
       mode='plane'
@@ -17,7 +24,7 @@ const CastomCardScroll = ({ header, cards, to }) => {
               <CastomCard
                 key={i}
                 header={card.name}
-                onClick={() => console.log(card)}
+                onClick={() => toCardPage(card)}
               />)}
           </CardScroll>
           : <Div>Загрузка...</Div>
