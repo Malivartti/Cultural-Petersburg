@@ -1,3 +1,11 @@
 .my-button {
   background: #4BB34B !important;
+  color: #fff !important;
+  margin: 0 auto;
+
+}
+
+.my-button span {
+  display: flex;
+  align-items: center;
 }

@@ -1,12 +1,14 @@
 .moderation__comparison {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin: 0 -10px;
 }
 
 .moderation__comparison-item {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .moderation__comparison-title {
@@ -14,9 +16,11 @@
   font-size: 13px;
   line-height: 114%;
   padding: 10px 15px;
-  border: 2px solid #000;
+  color: #2787F5;
+  border: 2px solid #2787F5;
   border-radius: 16px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .moderation__comparison-title_green {
@@ -29,6 +33,7 @@
   border: 2px solid #E64646;
 }
 
-.moderation__btn {
-  margin-top: auto;
+
+.moderation__btn_red {
+  background: red !important;
 }

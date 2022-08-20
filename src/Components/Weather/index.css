@@ -1,12 +1,21 @@
 .weather {
   display: flex;
+  flex-direction: column;
+}
+
+
+.weather__header {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .weather__title {
   margin-bottom: 10px;
+  
 }
 
 .weather__icon {
-  height: 100px;
+  height: 80px;
+  margin: -10px;
 }

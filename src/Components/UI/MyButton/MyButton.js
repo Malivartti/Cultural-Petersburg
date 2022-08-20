@@ -4,7 +4,7 @@ import './index.css'
 
 const MyButton = ({children, className = '', ...props}) => {
   return (
-    <Button className={`my-button ${className}`} {...props}>{children}</Button>
+    <Button className={`my-button ${className}`} {...props} size="l">{children}</Button>
   )
 }
 

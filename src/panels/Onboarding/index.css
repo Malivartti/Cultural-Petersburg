@@ -34,10 +34,6 @@
   margin: 0 auto 20px;
 }
 
-.onboarding__btn {
-  background: #4BB34B !important;
-}
-
 .onboarding__btn span {
   display: flex;
 }

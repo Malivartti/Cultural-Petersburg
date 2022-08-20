@@ -1,3 +1,7 @@
+.card {
+  height: 220px;
+}
+
 .card__header {
   font-weight: 600;
   font-size: 16px;
@@ -15,6 +19,8 @@
   font-size: 13px;
   line-height: 16px;
   color: #6D7885;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .card__text div {

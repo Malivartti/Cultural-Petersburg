@@ -17,11 +17,12 @@ const Weather = () => {
 
   return (
     <Div className='weather'>
-      <div>
+      <div className='weather__header'>
         <Title className="weather__title" level='2'>Сегодня в Петербурге {weather?.descr}, {weather?.temp}&nbsp;&deg;С</Title>
-        <div className='subtitle'>Советуем вам выбраться на улицу, погулять со своими друзьями или животными, посетить достопримечательности Петербурга.</div>
+        <img className="weather__icon" src={weather?.icon} alt='' />
       </div>
-      <img className="weather__icon" src={weather?.icon} alt='' />
+      <div className='subtitle'>Советуем вам выбраться на улицу, погулять со своими друзьями или животными, посетить достопримечательности Петербурга.</div>
+      
     </Div>
   )
 }

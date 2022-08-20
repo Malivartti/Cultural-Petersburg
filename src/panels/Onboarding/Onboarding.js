@@ -1,11 +1,15 @@
-import React from 'react'
-import { Button, Group, Panel, Title, View } from '@vkontakte/vkui'
+import React, { useContext } from 'react'
+import { Group, Panel, Title, View } from '@vkontakte/vkui'
 import './index.css';
 
 import ICONS from '../../img/icons'
 import saly from '../../img/saly.png'
+import MyButton from '../../Components/UI/MyButton/MyButton';
+import { AppNavigation } from '../../context';
 
-const Onboarding = ({ id, setActiveView }) => {
+const Onboarding = ({ id }) => {
+  const {setActiveView} = useContext(AppNavigation)
+
   function toMain() {
     setActiveView("main")
   }
@@ -18,9 +22,9 @@ const Onboarding = ({ id, setActiveView }) => {
           <img className="onboarding__saly" src={saly} alt="Saly"/>
           <Title className="onboarding__greetings">Привет, твой Петербург на связи 😃</Title>
           <div className="onboarding__descr">Это приложение создано для изучения города, открытия новых для себя мест и мониторинга событий</div>
-          <Button className="onboarding__btn" size="l" onClick={toMain}>
+          <MyButton onClick={toMain}>
             Начать <ICONS.arrowRight />
-          </Button>
+          </MyButton>
         </Group>
       </Panel>
     </View>

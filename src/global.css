@@ -9,3 +9,16 @@
   color: #6D7885;
   padding-top: 0;
 }
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #B5B5B5;
+  border-radius: 20px;
+}

@@ -9,23 +9,16 @@ import { getAttractions, getCulturalHeritageSites, getExhibitionHalls, getMuseum
 
 const Home = ({ id }) => {
   const { first_name } = useContext(User)
-  const [exhibitionsHalls, setExhibitionsHalls] = useState({ nextPageLink: "", cards: [] });
-  const [museums, setMuseums] = useState({ nextPageLink: "", cards: [] });
-  const [attractions, setAttractions] = useState({ nextPageLink: "", cards: [] });
-  const [culturalHeritagesSites, setCulturalHeritagesSites] = useState({ nextPageLink: "", cards: [] })
+  const [exhibitionsHalls, setExhibitionsHalls] = useState([]);
+  const [museums, setMuseums] = useState([]);
+  const [attractions, setAttractions] = useState([]);
+  const [culturalHeritagesSites, setCulturalHeritagesSites] = useState([])
 
   useEffect(async () => {
-    const [exhibitionsHallsUpadteLink, exhibitionsHalls] = await getExhibitionHalls()
-    setExhibitionsHalls({ nextPageLink: exhibitionsHallsUpadteLink, cards: exhibitionsHalls })
-
-    const [museumsUpadteLink, museums] = await getMuseums();
-    setMuseums({ nextPageLink: museumsUpadteLink, cards: museums })
-
-    const [attractionsUpadteLink, attractions] = await getAttractions();
-    setAttractions({ nextPageLink: attractionsUpadteLink, cards: attractions })
-
-    const [culturalHeritagesSitesUpadteLink, culturalHeritagesSites] = await getCulturalHeritageSites();
-    setCulturalHeritagesSites({ nextPageLink: culturalHeritagesSitesUpadteLink, cards: culturalHeritagesSites })
+    setExhibitionsHalls(await getExhibitionHalls());
+    setMuseums(await getMuseums());
+    setAttractions(await getAttractions());
+    setCulturalHeritagesSites(await getCulturalHeritageSites());
   }, [])
 
 
@@ -34,10 +27,10 @@ const Home = ({ id }) => {
       <Panel id={id}>
         <PanelHeader separator={false}>Добро пожаловать, {first_name}</PanelHeader>
         <Weather />
-        <CastomCardScroll header="Выставочные залы" cards={exhibitionsHalls.cards} />
-        <CastomCardScroll header="Музеи" cards={museums.cards} />
-        <CastomCardScroll header="Достопримечательности" cards={attractions.cards} />
-        <CastomCardScroll header="Объекты культурного наследия" cards={culturalHeritagesSites.cards} />
+        <CastomCardScroll header="Выставочные залы" cards={exhibitionsHalls}/>
+        <CastomCardScroll header="Музеи" cards={museums}/>
+        <CastomCardScroll header="Достопримечательности" cards={attractions}/>
+        <CastomCardScroll header="Объекты культурного наследия" cards={culturalHeritagesSites}/>
       </Panel>
     </View>
   )

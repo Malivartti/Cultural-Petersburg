@@ -3,3 +3,30 @@
   margin-bottom: 20px;
   max-width: 100%;
 }
+
+.card-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-page__title {
+  margin-bottom: 10px;
+}
+
+.card-page__descr {
+  margin-bottom: 10px;
+}
+
+.card-page__item {
+  margin-bottom: 10px;
+}
+
+.card-page__meta {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.card-page__info {
+  margin-bottom: 20px;
+}
