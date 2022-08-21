@@ -27,7 +27,7 @@ const Rating = ({ id }) => {
         <PanelHeader separator={false}>Рейтинг</PanelHeader>
         <Div className='subtitle'>Список самых быстрых смелых людей, путешествующих по Питеру</Div>
         <Top3 users={users.slice(0, 3)} />
-        <TopList users={users.slice(3, 11)} currentUser={{ first_name, last_name, photo: photo_100, score: 100 }}/>
+        <TopList users={users.slice(3, 11)} currentUser={{ first_name, last_name, photo: photo_100, score: 100, place: 1002 }}/>
       </Panel>
     </View>
   )

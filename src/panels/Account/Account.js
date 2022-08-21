@@ -21,7 +21,7 @@ const Account = ({ id }) => {
             header={
               <div className="account__text">
                 <Title level='2' className="account__name">{first_name} {last_name}</Title>
-                <Coins number="100" />
+                <Coins value={100} />
               </div>
             }>
             <Avatar size={120} src={photo_100} />

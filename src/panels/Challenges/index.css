@@ -1,0 +1,10 @@
+.challenges__title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.challenges__title svg {
+  transform: translateY(3px);
+  margin-left: 10px;
+}

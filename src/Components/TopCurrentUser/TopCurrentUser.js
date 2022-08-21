@@ -1,5 +1,6 @@
 import { Avatar, Cell, FixedLayout } from '@vkontakte/vkui'
 import React from 'react'
+import {declensionPoints} from '../../utils/declension'
 
 const TopCurrentUser = ({ user }) => {
   return (
@@ -8,10 +9,9 @@ const TopCurrentUser = ({ user }) => {
         before={
           <div className='user__avatar'>
             <Avatar src={user.photo} />
-            <div className='user__score'>99+</div>
           </div>
         }
-        description={`${user.score} баллов`}
+        description={`${user.place} место | ${declensionPoints(user.score)}`}
       >
         {user.first_name} {user.last_name}
       </Cell>

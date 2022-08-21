@@ -1,7 +1,8 @@
-import { Avatar, Cell, FixedLayout } from '@vkontakte/vkui';
+import { Avatar, Cell } from '@vkontakte/vkui';
 import React from 'react'
 import TopCurrentUser from '../TopCurrentUser/TopCurrentUser';
 import './index.css';
+import {declensionPoints} from '../../utils/declension'
 
 const TopList = ({ users, currentUser }) => {
   return (
@@ -16,7 +17,7 @@ const TopList = ({ users, currentUser }) => {
                 {i + 4}
               </div>
             </div>}
-          description={`${user.score} баллов`}
+          description={declensionPoints(user.score)}
         >
           {user.first_name} {user.last_name}
         </Cell>

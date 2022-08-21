@@ -16,6 +16,7 @@ import { Icon28ShareOutline } from '@vkontakte/icons';
 import { Icon28LocationMapOutline } from '@vkontakte/icons';
 import { Icon28ShareExternal } from '@vkontakte/icons';
 import { Icon20ArrowRightOutline } from '@vkontakte/icons';
+import { Icon24ClockOutline } from '@vkontakte/icons';
 
 const ICONS = {
   logo: Icon20GovernmentOutline,
@@ -26,6 +27,7 @@ const ICONS = {
   account: Icon28UserCircleOutline,
   add: Icon28AddCircleOutline,
   coins: Icon28CoinsOutline,
+  clock: Icon24ClockOutline,
   error: Icon28ErrorCircleOutline,
   notification: Icon28Notifications,
   users: Icon28Users3Outline,

@@ -1,5 +1,5 @@
 import React, { useContext, memo } from 'react';
-import { CardScroll, Div, Group, Header } from '@vkontakte/vkui'
+import { CardScroll, Group, Header, Spinner } from '@vkontakte/vkui'
 import CastomCard from '../CastomCard/CastomCard';
 import './index.css';
 import { AppNavigation, AppData } from '../../context';
@@ -40,7 +40,7 @@ const CastomCardScroll = ({ header, cards }) => {
                 onClick={() => toCardPage(card)}
               />)}
           </CardScroll>
-          : <Div>Загрузка...</Div>
+          : <Spinner size="medium" style={{ margin: "20px 0" }} />
       }
     </Group>
   )

@@ -12,9 +12,9 @@ function declension(number, words) {
 }
 
 export function declensionDays(number) {
-  return declension(number, ["балл", "балла", "баллов"])
+  return declension(number, ["день", "дня", "дней"])
 }
 
 export function declensionPoints(number) {
-  return declension(number, ["день", "дня", "дней"])
+  return declension(number, ["балл", "балла", "баллов"])
 }

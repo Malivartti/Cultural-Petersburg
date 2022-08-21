@@ -9,6 +9,7 @@ import Moderation from './panels/Moderation/Moderation';
 import CardPage from './panels/CardPage/CardPage';
 import { AppNavigation, AppData } from './context/index';
 import Locations from './panels/Locations/Locations';
+import CreateChallenge from './panels/Account/CreateChallenge/CreateChallenge';
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
 							<Moderation id="moderation" />
 							<CardPage id="cardPage" data={cardData} />
 							<Locations id="locations" data={locationData} />
+							<CreateChallenge id='createchallege' />
 						</Root>
 					</SplitCol>
 				</SplitLayout>

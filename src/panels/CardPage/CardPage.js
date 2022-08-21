@@ -7,11 +7,12 @@ import './index.css'
 import MyButton from '../../Components/UI/MyButton/MyButton'
 import bridge from "@vkontakte/vk-bridge";
 import Coins from '../../Components/Coins/Coins'
+import Days from '../../Components/Days/Days'
 
 const CardPage = ({ id, data }) => {
   const { setActiveView } = useContext(AppNavigation);
   const [locationCoords, setLocationCoords] = useState([])
-  const {header, toBack, title, img, points, ...props} = data
+  const { header, toBack, title, img, points = "", days = "", ...props } = data
   const other = []
   for (const i in props) {
     other.push([i, props[i]])
@@ -19,7 +20,9 @@ const CardPage = ({ id, data }) => {
 
   useEffect(async () => {
     const coords = await geocoder(data["Адресс"])
-    setLocationCoords(coords)
+    if (coords[0] && coords[1]) {
+      setLocationCoords(coords)
+    }
   }, [])
 
   function checkCoords() {
@@ -33,8 +36,11 @@ const CardPage = ({ id, data }) => {
         <Div className='card-page'>
           <img className='card-page__img' src={img} alt='' />
           <Title className='card-page__title' level='2' >{title}</Title>
-          <div className='card-page__meta'>{points && <Coins number={points} />}</div>
-          {other.map(prop => 
+          <div className='card-page__meta'>
+            {points && <Coins value={points} />}
+            {days && <Days value={days} />}
+          </div>
+          {other.map(prop =>
             prop[1] && <InfoRow className='card-page__info' key={prop[0]} header={prop[0]}>{prop[1]}</InfoRow>
           )}
           <LocationMap center={locationCoords} />
