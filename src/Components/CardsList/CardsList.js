@@ -5,11 +5,11 @@ import CastomCard from '../CastomCard/CastomCard'
 
 const CardsList = ({ data, toBack }) => {
   const { setCardData } = useContext(AppData)
-  const { setActiveView } = useContext(AppNavigation)
+  const { setActiveStory } = useContext(AppNavigation)
 
   function toCardPage(card) {
     setCardData({ ...card, header: "Вызов", toBack })
-    setActiveView('cardPage')
+    setActiveStory('cardPage')
   }
 
   return (

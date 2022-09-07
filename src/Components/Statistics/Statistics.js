@@ -1,4 +1,4 @@
-import { Div, Group, HorizontalCell, HorizontalScroll, Title } from '@vkontakte/vkui'
+import { Div, Group, HorizontalCell, HorizontalScroll, Subhead, Tappable, Title } from '@vkontakte/vkui'
 import React from 'react'
 import './index.css'
 
@@ -11,37 +11,39 @@ const categories = [{ name: 'Вызовы', visits: 25 },
 { name: 'Объекты культурного наследия2', visits: 25 },
 { name: 'Объекты культурного наследия3', visits: 25 },
 ]
-const allVisits = categories.reduce((acc, next) => acc + next.visits, 0)
+const allVisits = categories.reduce((acc, next) => [...acc, next.visits], [])
+const maxVisits = Math.max(...allVisits)
 
 const Statistics = () => {
   return (
     <div>
-      <Div>
+      <Div className='statistics__title'>
         <Title level="1">Статистика</Title>
-        <div className='subtitle'>Здесь показана ваша статистика о посещенных местах, событиях и достопримечательносях</div>
+        <Subhead>Здесь показана ваша статистика о посещенных местах, событиях и достопримечательносях</Subhead>
       </Div>
-      <Group>
+      <Group mode='plain'>
         <HorizontalScroll
           showArrows
-          getScrollToLeft={(i) => i - 120}
-          getScrollToRight={(i) => i + 120}
+          getScrollToLeft={(i) => i - 320}
+          getScrollToRight={(i) => i + 320}
         >
           <Div
             className='statistics__slider'
           >
             {categories.map(category =>
-              <HorizontalCell
-                key={category.name}
-                className='statistics__cell'
-                subtitle={category.name}
-              >
-                <div
-                  className='statistics__item'
-                  style={{ height: 200 * (category.visits / allVisits) }}
-                >
-                  {category.visits}
+              <Tappable key={category.name}>
+                <div className='statistics__cell' >
+                  <div className='statistics__cell-level'>
+                    <div
+                      className='statistics__item'
+                      style={{ height: 100 * (category.visits / maxVisits) }}
+                    >
+                      {category.visits}
+                    </div>
+                  </div>
+                  <div className='statistics__cell-name'>{category.name}</div>
                 </div>
-              </HorizontalCell>
+              </Tappable>
             )}
           </Div>
         </HorizontalScroll>

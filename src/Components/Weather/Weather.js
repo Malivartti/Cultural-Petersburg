@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Div, Title } from '@vkontakte/vkui'
+import { Div, Title, Subhead, Group } from '@vkontakte/vkui'
 import './index.css';
 
 import { getWeather, getIcon } from "../../api/weather"
+import { getWish } from '../../utils/wish';
 
 const Weather = () => {
   const [weather, setWeather] = useState({});
@@ -12,18 +13,20 @@ const Weather = () => {
     const descr = date?.weather[0]?.description
     const temp = Math.round(date?.main?.temp)
     const icon = getIcon(date?.weather[0]?.icon)
-    setWeather({ descr, temp, icon })
+    const wish = getWish(date?.weather[0]?.id)
+    setWeather({ descr, temp, icon, wish })
   }, [])
 
   return (
-    <Div className='weather'>
-      <div className='weather__header'>
-        <Title className="weather__title" level='2'>Сегодня в Петербурге {weather?.descr}, {weather?.temp}&nbsp;&deg;С</Title>
-        <img className="weather__icon" src={weather?.icon} alt='' />
-      </div>
-      <div className='subtitle'>Советуем вам выбраться на улицу, погулять со своими друзьями или животными, посетить достопримечательности Петербурга.</div>
-      
-    </Div>
+    <Group className='weather' mode="plain" separator="hide">
+      <Div>
+        <div className='weather__header'>
+          <Title className="weather__title" level='2'>Сегодня в Петербурге {weather?.descr}, {weather?.temp}&nbsp;&deg;С</Title>
+          <img className="weather__icon" src={weather?.icon} alt='' />
+        </div>
+        <Subhead>{weather.wish}</Subhead >
+      </Div>
+    </Group>
   )
 }
 

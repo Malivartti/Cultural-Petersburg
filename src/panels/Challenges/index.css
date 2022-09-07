@@ -4,7 +4,6 @@
   cursor: pointer;
 }
 
-.challenges__title svg {
-  transform: translateY(3px);
-  margin-left: 10px;
+.challenges__icon {
+  margin-left: 5px;
 }

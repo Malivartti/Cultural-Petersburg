@@ -1,39 +1,39 @@
 import React, { useContext, memo } from 'react';
-import { CardScroll, Group, Header, Spinner } from '@vkontakte/vkui'
+import { CardScroll, Group, Header, Spinner, useAdaptivity, ViewWidth } from '@vkontakte/vkui'
 import CastomCard from '../CastomCard/CastomCard';
 import './index.css';
 import { AppNavigation, AppData } from '../../context';
 
 const CastomCardScroll = ({ header, cards }) => {
   const { setCardData, setLocationData } = useContext(AppData)
-  const { setActiveView } = useContext(AppNavigation)
+  const { setActiveStory } = useContext(AppNavigation)
+
+  const { viewWidth } = useAdaptivity();
+  const isDesktop = viewWidth >= ViewWidth.SMALL_TABLET
 
   function toLocations(header, cards) {
     setLocationData(header, cards)
-    setActiveView('locations')
-  } 
+    setActiveStory('locations')
+  }
 
   function toCardPage(card) {
-    setCardData({ ...card, header, toBack: 'main' })
-    setActiveView('cardPage')
+    setCardData({ ...card, header, toBack: 'home' })
+    setActiveStory('cardPage')
   }
 
   return (
     <Group
-      mode='plane'
+      mode="plain"
       separator='hide'
       header={
-        <Header
-          className="scroll__header"
-          onClick={() => toLocations({ header, cards })}
-        >
-          {header}
+        <Header onClick={() => toLocations({ header, cards })}>
+          <div className="scroll__header">{header}</div>
         </Header>
       }>
       {
         cards.length
-          ? <CardScroll size="s">
-            {cards.slice(0, 7).map((card, i) =>
+          ? <CardScroll size={isDesktop ? "s" : "m"}>
+            {cards.slice(0, 10).map((card, i) =>
               <CastomCard
                 key={i}
                 item={card}

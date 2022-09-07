@@ -1,16 +1,19 @@
-import { Panel, PanelHeader, PanelHeaderBack, View } from '@vkontakte/vkui'
+import { Group, Panel, PanelHeader, PanelHeaderBack, View } from '@vkontakte/vkui'
 import React, { useContext } from 'react'
 import CardsList from '../../Components/CardsList/CardsList'
-import { AppNavigation } from '../../context'
+import { AppData, AppNavigation } from '../../context'
 
-const Locations = ({ id, data }) => {
-  const { setActiveView } = useContext(AppNavigation)
+const Locations = ({ id }) => {
+  const { setActiveStory } = useContext(AppNavigation)
+  const { locationData } = useContext(AppData)
 
   return (
     <View id={id} activePanel={id}>
       <Panel id={id}>
-        <PanelHeader left={<PanelHeaderBack onClick={() => setActiveView('main')} />} separator={false}>{data.header}</PanelHeader>
-        <CardsList data={data.cards} toBack="locations"/>
+        <PanelHeader before={<PanelHeaderBack onClick={() => setActiveStory('home')} />} separator={false}>{locationData.header}</PanelHeader>
+        <Group>
+          <CardsList data={locationData.cards} toBack="locations" />
+        </Group>
       </Panel>
     </View>
   )

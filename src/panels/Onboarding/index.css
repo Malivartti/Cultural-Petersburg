@@ -1,5 +1,6 @@
 .onboarding {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .onboarding__logo {
@@ -27,10 +28,6 @@
 
 .onboarding__descr {
   max-width: 320px;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 21px;
-  color: #6D7885;
   margin: 0 auto 20px;
 }
 

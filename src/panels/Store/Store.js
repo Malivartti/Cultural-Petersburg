@@ -5,7 +5,7 @@ import './index.css';
 const Store = ({ id }) => {
   return (
     <View id={id} activePanel={id}>
-      <Panel id={id} s>
+      <Panel id={id}>
         <PanelHeader separator={false}>Магазин</PanelHeader>
       </Panel>
     </View>

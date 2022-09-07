@@ -6,6 +6,7 @@ import Launch from "./Launch";
 
 // Init VK  Mini App
 bridge.send("VKWebAppInit");
+bridge.send("VKWebAppGetLaunchParams");
 
 ReactDOM.render(<Launch />, document.getElementById("root"));
 if (process.env.NODE_ENV === "development") {

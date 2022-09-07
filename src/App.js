@@ -1,47 +1,55 @@
-import React, { useState } from 'react';
-import { useAdaptivity, ViewWidth, Root, SplitLayout, SplitCol } from '@vkontakte/vkui';
+import React, { useState, useEffect, useRef } from 'react';
+import { Root, ViewWidth, useAdaptivity } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
-import './global.css'
+import './global.css';
+import bridge from '@vkontakte/vk-bridge';
 
 import Onboarding from './panels/Onboarding/Onboarding';
 import Main from './panels/Main/Main';
-import Moderation from './panels/Moderation/Moderation';
-import CardPage from './panels/CardPage/CardPage';
 import { AppNavigation, AppData } from './context/index';
-import Locations from './panels/Locations/Locations';
-import CreateChallenge from './panels/Account/CreateChallenge/CreateChallenge';
-
 
 const App = () => {
+	const isPopstate = useRef(false)
 	const [activeView, setActiveView] = useState('onboarding');
+	const [activeModal, setActiveModal] = useState(null)
+	const [popout, setPopout] = useState(null)
 	const [activeStory, setActiveStory] = useState("home");
 	const [cardData, setCardData] = useState(null)
 	const [locationData, setLocationData] = useState(null)
+
 	const { viewWidth } = useAdaptivity();
-	const isDesktop = viewWidth >= ViewWidth.TABLET;
+	const isDesktop = viewWidth >= ViewWidth.SMALL_TABLET
+
+	useEffect(() => {
+		if (isPopstate.current) {
+			isPopstate.current = false
+			return
+		}
+		history.pushState({page: activeStory}, "", "")
+	}, [activeStory])
+
+	function handlePopstate() {
+		isPopstate.current = true
+    if (history.state === null) {
+      bridge.send('VKWebAppClose', { 'status': 'success' })
+    } else {
+			bridge.send('VKWebAppDisableSwipeBack')
+      setActiveStory(history.state.page)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('popstate', handlePopstate)
+    return () => window.removeEventListener('popstate', handlePopstate)
+  })
 
 	return (
-		<AppNavigation.Provider value={{ setActiveView, activeStory, setActiveStory }}>
-			<AppData.Provider value={{ setCardData, setLocationData }}>
-				<SplitLayout
-					style={{ justifyContent: "center" }}
-				>
-					<SplitCol
-						animate={!isDesktop}
-						spaced={isDesktop}
-						width={isDesktop ? "560px" : "100%"}
-						maxWidth={isDesktop ? "560px" : "100%"}
-					>
-						<Root activeView={activeView}>
-							<Onboarding id="onboarding" />
-							<Main id="main" />
-							<Moderation id="moderation" />
-							<CardPage id="cardPage" data={cardData} />
-							<Locations id="locations" data={locationData} />
-							<CreateChallenge id='createchallege' />
-						</Root>
-					</SplitCol>
-				</SplitLayout>
+		<AppNavigation.Provider value={{ activeModal, setActiveModal, activeStory, setActiveStory, popout, setPopout }}>
+			<AppData.Provider value={{ cardData, setCardData, locationData, setLocationData }}>
+				<Root activeView={activeView}>
+					<Onboarding id="onboarding" isDesktop={isDesktop} setActiveView={setActiveView} />
+					<Main id="main" isDesktop={isDesktop} />
+				</Root>
 			</AppData.Provider>
 		</AppNavigation.Provider>
 	);

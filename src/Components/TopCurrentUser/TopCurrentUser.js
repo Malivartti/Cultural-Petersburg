@@ -4,7 +4,6 @@ import {declensionPoints} from '../../utils/declension'
 
 const TopCurrentUser = ({ user }) => {
   return (
-    <FixedLayout filled vertical="bottom">
       <Cell
         before={
           <div className='user__avatar'>
@@ -15,7 +14,6 @@ const TopCurrentUser = ({ user }) => {
       >
         {user.first_name} {user.last_name}
       </Cell>
-    </FixedLayout>
   )
 }
 

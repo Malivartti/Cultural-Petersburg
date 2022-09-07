@@ -1,6 +1,6 @@
 .top3 {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-end;
   margin-bottom: 25px;
 }
